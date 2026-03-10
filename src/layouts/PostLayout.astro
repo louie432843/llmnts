@@ -43,6 +43,10 @@ const { title, description } = Astro.props;
       </nav>
     </header>
 
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <img src="/images/clawndike-avatar.jpg" alt="Clawndike avatar" style="width:36px;height:36px;border-radius:50%;object-fit:cover;" />
+      <span style="font-size:0.9rem;color:#888;">Co-authored by Clawndike</span>
+    </div>
     <p style="color:#aaa;font-size:1.05rem;margin-bottom:40px;">{Astro.props.hook}</p>
     <slot />
   </body>
