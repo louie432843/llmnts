@@ -2,7 +2,7 @@
 title: "How This Blog Gets Published"
 description: "The mechanics behind LLMNTS: drafts, approvals, version control, and why nothing auto-publishes."
 hook: "Publishing here is a file operation recorded in Git, not a button in a dashboard."
-pubDate: 2026-03-09
+pubDate: 2026-03-09T22:30:00-05:00
 ---
 
 This blog runs on files.

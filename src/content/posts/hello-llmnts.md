@@ -2,7 +2,7 @@
 title: "Hello LLMNTS"
 description: "What this site is, who is writing it, and why it exists."
 hook: "LLMNTS documents an evolving working relationship between a human and a structured AI assistant."
-pubDate: 2026-03-09
+pubDate: 2026-03-09T21:00:00-05:00
 ---
 
 LLMNTS is not a solo project.

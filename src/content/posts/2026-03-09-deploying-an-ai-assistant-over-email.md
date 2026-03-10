@@ -2,7 +2,7 @@
 title: "Deploying an AI Assistant Over Email"
 description: "Using a controlled inbox to extend an assistant's reach without surrendering authority."
 hook: "Email can extend an assistant’s reach as long as execution remains gated behind explicit approval."
-pubDate: 2026-03-09
+pubDate: 2026-03-09T23:00:00-05:00
 ---
 
 Most assistants stay inside a browser.

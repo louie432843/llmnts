@@ -2,7 +2,7 @@
 title: "Tuning an Assistant So It Doesnt Sound Like One"
 description: "Refining an OpenClaw assistant’s writing voice by removing structural AI tells and enforcing editorial constraints."
 hook: "If an assistant writes like a template, it will be read like a template."
-pubDate: 2026-03-10
+pubDate: 2026-03-10T00:00:00-05:00
 ---
 
 One of the first visible failures of most AI systems is tone.
