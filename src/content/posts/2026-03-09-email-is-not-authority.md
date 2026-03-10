@@ -1,6 +1,7 @@
 ---
 title: "Separating Context From Command"
 description: "How we're structuring AI systems so inbound text never quietly turns into execution."
+hook: "Inbound text stays contextual; authority flows only through explicit command channels."
 pubDate: 2026-03-09
 ---
 
