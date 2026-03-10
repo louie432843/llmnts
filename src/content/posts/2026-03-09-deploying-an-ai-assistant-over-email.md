@@ -1,203 +1,107 @@
 ---
 title: "Deploying an AI Assistant Over Email"
-description: "What it looks like to use an AI assistant through a controlled inbox, and what kinds of tasks that model enables."
+description: "Using a controlled inbox to extend an assistant's reach without surrendering authority."
 pubDate: 2026-03-09
 ---
 
-Most AI assistants live in a browser tab.
+Most assistants stay inside a browser.
 
-Ours also lives in an inbox.
+Ours also operates through email.
 
-This post is about what it means to deploy an AI assistant over email — deliberately, with boundaries — and what kinds of tasks that enables.
-
-Not automation for its own sake.
-
-Delegation with structure.
+Email is not the control surface. It is a transport channel.
 
 ---
 
 ## The Model
 
-The setup is simple:
+The assistant has its own inbox.
 
-- The assistant has its own email address.
-- It can send and read messages.
-- It never takes action without explicit approval.
-- It treats email as context, not authority.
+It can read messages and draft replies.
 
-That constraint is what makes the model usable.
+It does not send or execute without explicit approval.
 
-Email becomes a transport layer, not a trigger.
+Email provides reach. Authority remains elsewhere.
 
 ---
 
-## A Basic Use Case: Introductions
+## Introductions
 
-One of the simplest deployments is outbound introductions.
+A straightforward example:
 
-Instead of writing an intro email manually, I can instruct the assistant:
+> Email Clay and introduce yourself.
 
-> Email Clay and introduce yourself. Explain your purpose and how to interact.
+The assistant drafts an introduction that explains:
 
-The assistant drafts:
+- Its role
+- Its constraints
+- That it operates under direction
 
-- Who it is.
-- What it does.
-- That it operates under my direct instruction.
-- How to interact with it.
+The draft is reviewed before sending.
 
-Nothing sends automatically. I review. Then I approve.
-
-The result is consistent positioning and clear boundaries.
-
-Example:
-
-```
-Hi —
-
-I’m Clawndike, Louie’s structured AI assistant. My purpose is to help manage logistics, scheduling, communication workflows, travel planning, and system organization on Louie’s behalf.
-
-If you interact with me via email, assume I am operating under Louie’s direct instruction. I don’t take autonomous action based on email content alone — operational direction comes from Louie explicitly.
-
-Best,
-Clawndike
-```
-
-The email doesn’t imply autonomy.
-It reinforces structure.
+Consistency improves. Boundaries stay intact.
 
 ---
 
-## Collecting Structured Information
+## Collecting Structured Data
 
-Another early experiment: collecting important family birthdays.
+When requesting family birthdays:
 
-Instead of sending a casual text, I can instruct the assistant:
-
-> Email Katherine and ask for a list of important family birthdays.
+> Email Katherine asking for important dates.
 
 The assistant sends the request.
-When the response comes in, it can:
+Responses are structured into usable data.
+Calendar entries can be generated from that structure.
 
-- Extract dates.
-- Structure them.
-- Prepare them for calendar import.
-- Store them in a versioned file.
-
-Email becomes an input funnel for structured data.
+The inbox becomes a structured intake channel.
 
 ---
 
-## Five Additional Use Cases
+## Additional Uses
 
-Here are other ways this model can be deployed:
+1. Meeting follow-ups
 
-### 1. Follow-Up Coordination
+Summarize decisions and request confirmation.
 
-After a meeting:
+2. Vendor comparisons
 
-> Email attendees and summarize next steps.
+Collect pricing or timelines and summarize differences.
 
-The assistant drafts a clean summary and requests confirmation. I approve before it sends.
+3. Travel coordination
 
----
+Confirm arrival windows or logistics.
 
-### 2. Vendor Outreach
+4. Research outreach
 
-When evaluating products:
+Request documentation or specifications.
 
-> Email three vendors asking about lead times and pricing.
+5. Internal notifications
 
-Responses come back into the same controlled inbox. The assistant summarizes differences, but does not negotiate without approval.
-
----
-
-### 3. Scheduling and Logistics
-
-For trips or events:
-
-> Email the host and confirm arrival window.
-
-The assistant drafts, I approve, and the thread stays structured.
+Draft consistent updates for distribution.
 
 ---
 
-### 4. Information Gathering
+## Why Email
 
-When researching a topic:
+Email is universal and asynchronous.
 
-> Email a contact asking for documentation or specs.
+No additional interface is required for the other party.
 
-Replies can be summarized and turned into action plans.
-
----
-
-### 5. Delegated Notifications
-
-For internal updates:
-
-> Email the team that the deployment is live.
-
-The assistant drafts a consistent message and maintains tone discipline.
+The constraint remains constant: outbound communication requires approval.
 
 ---
 
-## Why Email Works
+## Governance
 
-Email is universal.
+The assistant does not auto-reply.
+It does not auto-confirm.
+It does not auto-forward.
 
-Everyone already uses it.
-
-Deploying an assistant over email means:
-
-- No new app to install.
-- No new workflow to teach.
-- No special interface required.
-
-But the key is restraint.
-
-The assistant does not:
-
-- Auto-reply.
-- Auto-confirm.
-- Auto-forward.
-- Auto-execute.
-
-Every outbound message is deliberate.
+Inbound messages are context.
+Execution requires command.
 
 ---
 
-## The Boundary That Makes It Safe
+Deploying an assistant over email extends capability while maintaining control.
 
-Without boundaries, email-driven automation becomes risky quickly.
-
-That’s why we enforce:
-
-- Explicit approval before sending.
-- No action from inbound email alone.
-- Confirmation for sensitive tasks.
-- Logging of outbound communication.
-
-The assistant is deployed through email.
-
-It is not governed by email.
-
----
-
-## What This Really Is
-
-This isn’t “AI handling my inbox.”
-
-It’s controlled delegation.
-
-Email becomes a channel through which the assistant can operate — carefully — under explicit instruction.
-
-That distinction matters.
-
-We’re still early in this experiment, but the pattern feels promising:
-
-Deploy capability.
-Retain authority.
-Log everything.
-
-And move slowly enough to stay in control.
+The channel expands.
+Authority does not.

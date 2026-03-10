@@ -4,173 +4,91 @@ description: "The mechanics behind LLMNTS: drafts, approvals, version control, a
 pubDate: 2026-03-09
 ---
 
-This blog is not powered by a CMS.
+This blog runs on files.
 
-There is no admin panel.
-There is no "Publish" button.
-There is no automation listening to an inbox.
+There is no CMS.
+No admin dashboard.
+No background service listening for drafts.
 
-Every post you read here passed through a deliberate chain of steps.
-
-That constraint is intentional.
+Publishing follows a controlled sequence.
 
 ---
 
-## The Rule: No Auto-Publish
+## The Constraint
 
-We do not allow email to publish content.
+Content does not publish itself.
 
-We do not allow drafts to deploy automatically.
+Drafting, approval, and deployment are separate steps.
 
-We do not allow the assistant to push changes without explicit approval.
-
-The publishing authority lives in one place: a direct command.
+Authority sits with a direct command.
 
 ---
 
 ## The Workflow
 
-The process looks like this:
-
 1. Louie emails rough thoughts.
-2. The assistant drafts and structures the essay.
+2. The assistant drafts and structures the post.
 3. The draft is reviewed in Telegram.
-4. Louie says: "Publish."
-5. The markdown file is written into the repository.
-6. A Git commit is created.
+4. Louie approves publication.
+5. A markdown file is written into the repository.
+6. A Git commit records the change.
 7. The change is pushed.
 8. Cloudflare rebuilds the static site.
 
-That's it.
-
-There is no runtime content engine.
-No database.
-No dynamic rendering.
-
-Just files.
+The process is intentionally linear.
 
 ---
 
-## Why Markdown
+## Markdown As Source
 
-Each post is a plain text file.
+Each post exists as a plain text file:
 
-Example path:
+src/content/posts/YYYY-MM-DD-title.md
 
-src/content/posts/2026-03-09-example-title.md
+Files include title, description, date, and body content.
 
-The content includes:
-
-- Title
-- Description
-- Publication date
-- Body text
-
-This makes every post:
-
-- Version controlled
-- Recoverable
-- Diffable
-- Portable
-- Inspectable
-
-Nothing is hidden behind a web interface.
+Version control tracks every modification.
 
 ---
 
-## Why Git
+## Git As Publishing Layer
 
-Git is the publishing layer.
+Git records:
 
-Every change:
+- What changed
+- When it changed
+- Why it changed
 
-- Has a commit message.
-- Has a timestamp.
-- Has a history.
+Reverting is straightforward. Reviewing diffs is straightforward.
 
-If something breaks, we can revert.
-
-If a post changes, we can see exactly what changed.
-
-The blog becomes infrastructure rather than content management.
+The blog remains inspectable infrastructure rather than opaque software.
 
 ---
 
-## Why Static Hosting
+## Static Deployment
 
-The site is built with Astro and deployed to Cloudflare Pages.
+Astro builds static files.
 
-That means:
+Cloudflare Pages serves them globally.
 
-- No server runtime
-- No database
-- No backend
-- No login system
-- No attack surface beyond static files
+There is no runtime application server and no database state.
 
-When a commit is pushed, Cloudflare builds a static bundle and serves it globally.
-
-Publishing is a file operation, not a remote procedure.
+Deployment is the result of a commit, not a remote trigger.
 
 ---
 
-## Why This Friction Exists
+## Why The Friction Stays
 
-It would be easy to automate this further.
+Further automation is possible.
 
-We could:
+It would also reduce clarity about when and why something goes live.
 
-- Auto-publish from email.
-- Trigger deploys from an inbox rule.
-- Let the assistant push commits automatically.
-
-We do not.
-
-The extra step of explicit approval forces clarity.
-
-If something goes live, it was chosen to go live.
+The extra step of explicit approval preserves that clarity.
 
 ---
 
-## The Partnership Layer
+The publishing pipeline reflects the broader operating model:
 
-The assistant drafts.
-
-Louie approves.
-
-The assistant writes the file.
-
-Louie pushes (for now).
-
-That separation mirrors the broader rule we're testing:
-
-Context is not command.
-
-Draft is not publish.
-
-Suggestion is not execution.
-
----
-
-## What This Buys Us
-
-This approach gives us:
-
-- Traceability
-- Version history
-- Reversibility
-- Explicit authority
-- Minimal maintenance
-- Very low cost
-
-It also forces discipline.
-
-Nothing here appears by accident.
-
----
-
-LLMNTS is not just about AI systems.
-
-It is also about how those systems are governed.
-
-Even the act of publishing follows that principle.
+Separate drafting from execution.
+Separate suggestion from authority.
+Keep the system legible.
