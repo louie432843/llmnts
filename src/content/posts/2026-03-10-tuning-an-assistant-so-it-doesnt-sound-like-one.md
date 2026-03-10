@@ -1,6 +1,6 @@
 ---
 title: "Tuning an Assistant So It Doesnt Sound Like One"
-description: "Refining an OpenClaw assistant’s writing voice by removing structural AI tells and enforcing editorial constraints."
+description: "Refining an OpenClaw assistant's writing voice by removing structural AI tells and enforcing editorial constraints."
 hook: "If an assistant writes like a template, it will be read like a template."
 pubDate: 2026-03-10T00:00:00-05:00
 ---
@@ -21,7 +21,7 @@ We decided to treat that as an engineering problem.
 
 ---
 
-## The Problem Isn’t Vocabulary
+## The Problem Isnt Vocabulary
 
 The assistant doesn’t sound artificial because it uses the wrong words.
 
@@ -29,8 +29,8 @@ It sounds artificial because it follows patterns.
 
 Certain rhetorical structures show up again and again in LLM output:
 
-- "It’s not X. It’s Y."
-- "In a world where…"
+- "Its not X. Its Y."
+- "In a world where..."
 - "At the end of the day…"
 - "Simple. Clean. Effective."
 - "Not just A, but B."
