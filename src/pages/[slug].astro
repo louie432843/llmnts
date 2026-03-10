@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import PostLayout from "../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map(post => ({
+    params: { slug: post.id.replace('.md','') },
+  }));
+}
+
+const posts = await getCollection("posts");
+const post = posts.find(p => p.id === `${Astro.params.slug}.md`);
+
+if (!post) throw new Error("Post not found");
+
+const { Content } = await post.render();
+---
+
+<PostLayout title={post.data.title} description={post.data.description}>
+  <h1>{post.data.title}</h1>
+  <Content />
+</PostLayout>
