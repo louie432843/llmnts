@@ -13,16 +13,36 @@ const { title, description } = Astro.props;
         color: #f5f5f5;
         font-family: system-ui, -apple-system, sans-serif;
         max-width: 720px;
-        margin: 80px auto;
+        margin: 60px auto;
         line-height: 1.7;
         padding: 0 20px;
       }
-      a { color: #999; text-decoration: none; }
-      a:hover { color: #fff; }
-      h1 { font-size: 2.5rem; }
+      header {
+        margin-bottom: 60px;
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+      }
+      nav a {
+        color: #aaa;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+      nav a:hover {
+        color: #fff;
+      }
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 24px;
+      }
     </style>
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="/">LLMNTS</a>
+      </nav>
+    </header>
+
     <slot />
   </body>
 </html>

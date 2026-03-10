@@ -14,23 +14,45 @@ const posts = await getCollection("posts");
         color: #f5f5f5;
         font-family: system-ui, -apple-system, sans-serif;
         max-width: 720px;
-        margin: 80px auto;
+        margin: 60px auto;
         padding: 0 20px;
       }
-      a { color: #aaa; text-decoration: none; }
-      a:hover { color: #fff; }
-      h1 { font-size: 2.5rem; margin-bottom: 40px; }
-      li { margin-bottom: 12px; }
+      header {
+        margin-bottom: 60px;
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+      }
+      nav a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color: #fff;
+      }
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 40px;
+      }
+      li { margin-bottom: 16px; }
+      a.post-link { color: #ccc; text-decoration: none; }
+      a.post-link:hover { color: #fff; }
     </style>
   </head>
   <body>
-    <h1>LLMNTS</h1>
+    <header>
+      <nav>
+        <a href="/">LLMNTS</a>
+      </nav>
+    </header>
+
+    <h1>Essays</h1>
+
     <ul>
       {posts.map(post => {
         const slug = post.id.replace('.md','');
         return (
           <li>
-            <a href={`/${slug}`}>
+            <a class="post-link" href={`/${slug}`}>
               {post.data.title}
             </a>
           </li>
