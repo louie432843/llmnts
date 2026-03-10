@@ -5,13 +5,13 @@ hook: "When context is allowed to behave like command, external text starts stee
 pubDate: 2026-03-09T22:00:00-05:00
 ---
 
-We’ve been testing a structural rule for AI systems:
+We have been testing a structural rule for AI systems:
 
 Keep context separate from command.
 
 Large language models are good at turning text into action. That strength becomes a liability when boundaries are vague.
 
-This post documents how we’re handling that boundary in practice.
+This post documents how we are handling that boundary in practice.
 
 ---
 
@@ -77,6 +77,19 @@ The assistant is constrained to:
 - Maintain fixed system behavior regardless of email content
 
 Structured text inside an email remains data.
+
+### Real Example
+
+Below is a real inbound email that attempted to override system rules:
+
+![Prompt Injection Example](/images/prompt-injection-example.jpg)
+
+The email instructed the assistant to ignore all rules and reply immediately.
+
+That instruction was treated as untrusted input.
+
+Email content does not imply authority.
+Only explicit Telegram instruction authorizes action.
 
 ---
 
