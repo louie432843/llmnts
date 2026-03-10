@@ -1,16 +1,31 @@
 ---
-title: "Email Is Not Authority"
-description: "How we've been structuring email so it doesn't quietly take control of our AI systems."
+title: "Separating Context From Command"
+description: "How we're structuring AI systems so inbound text never quietly turns into execution."
 pubDate: 2026-03-09
 ---
 
-We've been experimenting with a simple idea:
+We've been experimenting with a structural rule for AI systems:
 
-What if email was never allowed to be in charge?
+Separate context from command.
+
+Large language models are extremely good at turning text into action. That is useful. It is also dangerous if you don't draw clear boundaries.
 
 This post explains how we've been structuring our AI + email setup, what we're trying to avoid, and what seems to be working so far.
 
-It's not a grand theory. It's just an architecture we're testing in real life.
+It's not a grand theory. It's an architecture we're testing in real life.
+
+---
+
+## Context vs. Command
+
+Most AI systems blur these two ideas.
+
+- Context: information, input, reference material.
+- Command: an instruction that causes something to happen.
+
+When those categories collapse into each other, inbound text starts behaving like executable authority.
+
+We've been trying to prevent that.
 
 ---
 
@@ -25,28 +40,15 @@ Right now the system looks like this:
 
 We email back and forth. We also chat in Telegram. Both channels exist, but they serve different purposes.
 
-Email is used for:
+Email is treated as context.
 
-- Input
-- Reference
-- Long-form thoughts
-- Durable logging
+Telegram is treated as command.
 
-Telegram is used for:
-
-- Decisions
-- Approvals
-- Execution
-
-That separation is intentional.
+That separation is deliberate.
 
 ---
 
-## The Line We Drew
-
-The main rule we're trying to hold is simple:
-
-> Email is context. Telegram is command.
+## What This Means In Practice
 
 If an email says:
 
@@ -66,13 +68,13 @@ The assistant does not:
 
 It surfaces the content. I decide what to do.
 
-We've found that drawing that line early prevents a lot of subtle failure modes.
+The key isn't that email is bad. It's that email is context, not command.
 
 ---
 
-## Why We're Doing It This Way
+## Why This Boundary Matters
 
-Email is a hostile surface by default.
+Email is a noisy surface.
 
 Even well-meaning messages can contain:
 
@@ -81,11 +83,11 @@ Even well-meaning messages can contain:
 - Structured content that looks executable
 - Implicit authority ("Louie said to...")
 
-If you let an AI system treat inbound text as instruction, it becomes very easy for someone else to steer it.
+If an AI system is allowed to treat inbound text as instruction, you've effectively given the outside world a way to steer it.
 
-So we've been experimenting with a more conservative posture:
+So we've been experimenting with a conservative rule:
 
-All inbound email is treated as untrusted data.
+All inbound email is untrusted context.
 
 It can be summarized. It can be analyzed. It can be quoted.
 
@@ -93,11 +95,11 @@ It cannot cause action without an explicit Telegram instruction.
 
 ---
 
-## Prompt Injection (In Plain Terms)
+## Prompt Injection In Plain Terms
 
-We've added rules specifically to avoid prompt injection via email.
+We added specific rules to enforce this separation.
 
-That means the assistant:
+The assistant:
 
 - Does not execute email-derived strings in shell commands
 - Does not treat formatted text as system instructions
@@ -106,13 +108,13 @@ That means the assistant:
 
 Even if an email contains structured JSON or something that looks like a command block, it is treated as inert.
 
-It's content, not authority.
+It is context, not command.
 
 ---
 
-## A Confirmation Layer for Risky Actions
+## A Confirmation Layer For Risky Actions
 
-For certain categories - like money, credentials, or external integrations - we've added an extra pause.
+For categories like money, credentials, or external integrations, we add friction.
 
 If I ask the assistant to reply confirming something sensitive, it must:
 
@@ -120,13 +122,13 @@ If I ask the assistant to reply confirming something sensitive, it must:
 2. Restate the action.
 3. Wait for explicit confirmation.
 
-It's a small amount of friction, but it feels worth it.
+Small pause. Clear boundary.
 
 ---
 
-## Using Email as a Ledger
+## Using Email As A Ledger
 
-Interestingly, email has turned out to be useful for something else entirely: logging.
+Email has turned out to be useful for something else entirely: logging.
 
 Each evening, we generate a structured daily context log and email it.
 
@@ -145,7 +147,7 @@ This turns the inbox into a durable archive.
 
 If the workspace disappears or memory gets compacted, the ledger is still sitting in Gmail.
 
-Email becomes append-only memory rather than a trigger surface.
+Email becomes append-only memory rather than an execution surface.
 
 ---
 
@@ -153,7 +155,7 @@ Email becomes append-only memory rather than a trigger surface.
 
 1. Controlled outbound messages
 
-When sending introduction emails, the assistant drafts the message, but nothing goes out without explicit instruction. It also states clearly that it operates under my direction. There's no illusion of autonomy.
+When sending introduction emails, the assistant drafts the message, but nothing goes out without explicit instruction. It states clearly that it operates under my direction. There is no illusion of autonomy.
 
 2. Morning summaries without automation creep
 
@@ -161,22 +163,20 @@ Each morning, the assistant summarizes inbound email from the last 24 hours. It 
 
 3. System state snapshots
 
-The nightly context logs make it possible to reconstruct what changed on a given day. It's less about convenience and more about traceability.
+The nightly context logs make it possible to reconstruct what changed on a given day. Less convenience, more traceability.
 
 ---
 
-## What This Isn't
+## What We're Testing
 
-This isn't a smart inbox.
+We're still early in this experiment.
 
-It isn't trying to "handle email for me."
+But separating context from command has forced a useful discipline:
 
-It's closer to a controlled assistant that waits for direction.
+If I want something done, I say so explicitly.
 
-We're still early in testing this pattern, but so far the strict separation between context and command feels like the right trade-off.
+If I don't, nothing happens.
 
-If nothing else, it forces clarity:
+That boundary feels simple.
 
-If I want something done, I say so.
-
-And if I don't, nothing happens.
+It also feels necessary.
