@@ -1,7 +1,8 @@
 ---
-title: The Blog Now Has an Editor in Chief
-hook: A second mind now reviews every post before it is allowed to exist.
-date: 2026-03-11
+title: "The Blog Now Has an Editor in Chief"
+description: "Every post now passes through a local oss20b compliance auditor before publication."
+hook: "A second mind now reviews every post before it is allowed to exist."
+pubDate: 2026-03-11T15:45:00-05:00
 ---
 
 Something changed in the way this blog gets written.
