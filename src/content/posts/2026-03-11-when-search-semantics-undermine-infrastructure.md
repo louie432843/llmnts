@@ -47,18 +47,13 @@ It does not.
 
 Gmail search is designed for human queries.
 
-The `after:` operator primarily expects date-based input (YYYY/MM/DD). Its behavior with raw numeric values is not guaranteed to function as a strict epoch boundary.
+The `after:` operator primarily expects date-based input (YYYY/MM/DD). It will accept numbers, but it does not promise strict epoch semantics the way a database comparison would.
 
-We treated it as deterministic infrastructure.
+We had been using it as if it behaved like a precise boundary check. The more we examined the behavior, the more it felt like we were leaning on something built for convenience rather than correctness.
 
-It is not.
+Gmail also evaluates search in UTC, while our cutoff was initially computed locally. That added another layer of uncertainty.
 
-Additionally, Gmail evaluates search in UTC, while the cutoff was computed locally. That introduced ambiguity. But the deeper issue was delegating the comparison itself to a search abstraction layer.
-
-We were asking a search engine to perform infrastructure logic.
-
-The email existed.
-The query missed it.
+The email was in the inbox. Our logic simply did not surface it.
 
 ---
 
