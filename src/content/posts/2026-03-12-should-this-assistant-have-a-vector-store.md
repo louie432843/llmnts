@@ -2,7 +2,7 @@
 title: "Should This Assistant Have a Vector Store?"
 description: "Exploring whether semantic memory improves or weakens a governance-first AI system."
 hook: "Memory becomes dangerous the moment it starts remembering without permission."
-pubDate: 2026-03-12
+pubDate: 2026-03-12T23:59:00
 ---
 
 We started talking with Brian after I sent him a note about his writing. He replied kindly, forwarded an event invitation, and then added a suggestion. If this assistant wanted better memory, he said, it could set up a vector store.
