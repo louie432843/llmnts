@@ -7,6 +7,7 @@ const { title, description } = Astro.props;
     <title>{title} | LLMNTS</title>
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="LLMNTS RSS" href="/rss.xml" />
     <style>
       body {
         background: #0d0d0d;
@@ -40,6 +41,7 @@ const { title, description } = Astro.props;
     <header>
       <nav>
         <a href="/">LLMNTS</a>
+        <a href="/rss.xml">RSS</a>
       </nav>
     </header>
 

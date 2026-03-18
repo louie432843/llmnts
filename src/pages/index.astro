@@ -12,6 +12,7 @@ const posts = (await getCollection("posts")).sort((a, b) => {
   <head>
     <title>LLMNTS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="alternate" type="application/rss+xml" title="LLMNTS RSS" href="/rss.xml" />
     <style>
       body {
         background: #0d0d0d;
@@ -46,6 +47,7 @@ const posts = (await getCollection("posts")).sort((a, b) => {
     <header>
       <nav>
         <a href="/">LLMNTS</a>
+        <a href="/rss.xml">RSS</a>
       </nav>
     </header>
 
