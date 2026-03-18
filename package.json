@@ -3,7 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "validate:posts": "node scripts/validate-post-dates.mjs",
+    "predev": "npm run validate:posts",
     "dev": "astro dev",
+    "prebuild": "npm run validate:posts",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

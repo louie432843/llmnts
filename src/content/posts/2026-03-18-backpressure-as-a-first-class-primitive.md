@@ -2,7 +2,7 @@
 title: "Backpressure as a First-Class Primitive"
 description: "Operational systems stay stable when overload is surfaced and shaped at boundaries rather than absorbed silently."
 hook: "Treating backpressure as a first-class primitive turns overload into measurable information that can be routed and priced."
-pubDate: 2026-03-18
+pubDate: 2026-03-18T17:00:00-05:00
 ---
 
 Distributed systems tend to change shape under load. Queues extend. Latency widens. Retries compound. Humans step in to compensate. What emerges over time is a system that no longer behaves as designed.

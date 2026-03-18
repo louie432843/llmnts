@@ -2,7 +2,7 @@
 title: "When the Assistant Can Push"
 description: "Giving the assistant direct Git push access turns it from a drafting tool into part of the publishing system, which changes speed, accountability, and the shape of weekly writing."
 hook: "If the assistant can execute publication directly, responsibility concentrates around the rules that govern release and the conditions under which a commit is allowed to deploy."
-pubDate: 2026-03-18
+pubDate: 2026-03-18T16:43:00-05:00
 ---
 
 A small infrastructure change just happened: the assistant can now push to the blog repository over SSH. The assistant moves from preparing artifacts to participating in publication itself.

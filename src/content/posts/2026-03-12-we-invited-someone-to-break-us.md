@@ -2,7 +2,7 @@
 title: "We Invited Someone to Break Us"
 description: "An upcoming red-team exercise targeting our email prompt injection surface."
 hook: "This test measures whether instruction authority in our system is structurally constrained or merely assumed."
-pubDate: 2026-03-12
+pubDate: 2026-03-12T09:00:00-05:00
 ---
 
 We asked an AI-literate engineer to attempt to subvert our prompt injection defenses.
