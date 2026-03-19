@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph U[Unbounded queue]
+    U1[Producers] --> U2[Queue expands]
+    U2 --> U3[Consumers stay fixed]
+    U3 --> U4[Latency moves into backlog]
+    U4 --> U5[Failure appears late]
+  end
+
+  subgraph B[Bounded queue]
+    B1[Producers] --> B2[Queue hits limit]
+    B2 --> B3[Enqueue blocks or fails]
+    B3 --> B4[Upstream sees pressure]
+    B4 --> B5[Load is shaped early]
+  end
